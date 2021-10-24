@@ -79,3 +79,4 @@ module.exports = {
 - term
   - yarn add -D webpack webpack-cli css-loader mini-css-extract-plugin
   - yarn add -D webpack webpack-cli css-loader sass sass-loader mini-css-extract-plugin
+  - base.css などで独立 ↑ https://github.com/BoxPistols/ics_webpack/commit/4e4afe13906401cedb7ee9f87c431b34eae65d24
