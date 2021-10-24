@@ -1,9 +1,12 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 // [定数] webpack の出力オプションを指定します
 // 'production' か 'development' を指定
-const MODE = 'development'
+const MODE = 'production'
 
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
 const enabledSourceMap = MODE === 'development'
+
 
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
@@ -27,8 +30,10 @@ module.exports = {
         test: /\.scss/,
         // ローダー名
         use: [
-          // linkタグに出力する機能
-          'style-loader',
+          // CSSファイルを書き出すオプションを有効にする
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
           // CSSをバンドルするための機能
           {
             loader: 'css-loader',
@@ -55,12 +60,20 @@ module.exports = {
       }
     ]
   },
-  // ES5(IE11等)向けの指定
-  target: ['web', 'es5'],
+
   // ローカル開発用環境を立ち上げる
   // 実行時にブラウザが自動的に localhost を開く
   devServer: {
     static: 'dist',
     open: true
-  }
+  },
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'base.css'
+    })
+  ],
+
+  // ES5(IE11等)向けの指定
+  target: ['web', 'es5']
 }

@@ -1,3 +1,6 @@
+@import "utility";
+
 .hoge {
   color: orange;
+  color: var(--primary-color, skyblue);
 }
