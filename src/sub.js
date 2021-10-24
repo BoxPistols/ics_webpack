@@ -1,3 +1,3 @@
 export function hello () {
-  alert('Hello')
+  document.write("Heeel")
 }
