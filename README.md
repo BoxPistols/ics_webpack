@@ -45,3 +45,20 @@ module.exports = {
 
 - term
   - yarn add -D webpack webpack-cli webpack-dev-server
+
+### package.json
+
+```json
+...
+ "scripts": {
+    "build": "webpack --mode development",
+    "start": "webpack serve", // ホットリロード 起動
+    "watch": "webpack --watch" // 監視とビルドのみ、より高速
+  },
+...
+```
+
+## CSS 設定
+
+- term
+  - yarn add -D webpack webpack-cli style-loader css-loader
