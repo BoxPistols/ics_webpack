@@ -24,7 +24,7 @@ module.exports = {
       // CSSファイルの読み込み
       {
         // 対象となるファイルの拡張子
-        test: /\.css/,
+        test: /\.scss/,
         // ローダー名
         use: [
           // linkタグに出力する機能
@@ -36,6 +36,18 @@ module.exports = {
               // オプションでCSS内のurl()メソッドの取り込みを禁止する
               url: false,
               // ソースマップを有効にする
+              sourceMap: enabledSourceMap,
+
+              // 0 => no loaders (default);
+              // 1 => postcss-loader;
+              // 2 => postcss-loader, sass-loader
+              importLoaders: 2
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              // ソースマップの利用有無
               sourceMap: enabledSourceMap
             }
           }
