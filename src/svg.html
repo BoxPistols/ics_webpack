@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG</title>
+  </head>
+  <body>
+    <h1>SVG</h1>
+
+    <svg width="160" height="160">
+      <defs>
+        <style>
+          @keyframes eye-move {
+            to {
+              transform: translateX(-3px);
+            }
+          }
+          .eye {
+            animation: eye-move 1s infinite alternate ease-in;
+          }
+        </style>
+      </defs>
+      <rect x="0" y="0" width="160" height="160" fill="skyblue" />
+      <!--       <ellipse cx="80" cy="80" rx="50" ry="35" fill="darkslateblue" /> -->
+      <ellipse cx="80" cy="85" rx="60" ry="45" fill="chocolate" />
+
+      <g class="eye">
+        <circle cx="55" cy="85" r="8" fill="black" />
+        <circle cx="105" cy="85" r="8" fill="black" />
+      </g>
+
+      <polyline
+        points="60,30 80,55 100,30"
+        stroke="green"
+        stroke-width="10"
+        fill="none"
+        stroke-linecap="round"
+      />
+
+      <polygon points="80,80 70,90 90,90" fill="yellow" />
+      <!-- <path d="M 65,92 A 15,10 0 0 0 95,92 Z" fill="none" stroke="black" /> -->
+      <path d="M 65,92 A 15,16 0 0 0 95,92 Z" fill="skyblue" />
+    </svg>
+
+    <!-- <svg width="160" height="160">
+      <rect x="0" y="0" width="160" height="160" fill="gray" />
+      <rect x="40" y="40" width="80" height="80" fill="tomato" />
+    </svg>
+
+    <svg width="160" height="160" viewBox="0,0,320,320">
+      <rect x="0" y="0" width="160" height="160" fill="gray" />
+      <rect x="40" y="40" width="80" height="80" fill="skyblue" />
+    </svg>
+
+    <svg width="160" height="160" viewBox="40,40,80,80">
+      <rect x="0" y="0" width="160" height="160" fill="gray" />
+      <rect x="40" y="40" width="80" height="80" fill="tomato" />
+    </svg> -->
+  </body>
+</html>
