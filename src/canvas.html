@@ -12,11 +12,31 @@
       canvas {
         background: #fff;
       }
+      header {
+        background-color: #666;
+        color: #fff;
+        width: 800px;
+        height: 300px;
+      }
     </style>
   </head>
   <body>
+    <header><h1>Animation</h1></header>
+
     <canvas width="600" height="240"> Canvas not supported. </canvas>
 
+    <script type="text/javascript">
+      const el = document.querySelector("h1");
+      let g = 0;
+      function start() {
+        if (g < 600) {
+          g = g + 2;
+          el.style.marginLeft = g + "px";
+          // console.log(el);
+        }
+      }
+      setInterval(start, 10);
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>

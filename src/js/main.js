@@ -25,6 +25,10 @@
     // ctx.ellipse(x, y, rx, ry, rotation, start, end);
     ctx.ellipse(80, 40, 70, 30, 0, 0, 2 * Math.PI);
     ctx.stroke();
+
+    const w = { d: "2", dv: "15" };
+    w.tech = "200";
+    console.log(w);
   }
 
   draw();
